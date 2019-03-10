@@ -1,0 +1,11 @@
+server {
+        server_name _;
+        server_tokens off;
+        listen ${HTTP_PORT};
+        return ${REDIRECT_TYPE} ${REDIRECT}$request_uri;
+
+        location /health {
+            default_type text/html;
+            return 200; 
+        }
+}
